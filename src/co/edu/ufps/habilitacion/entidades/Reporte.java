@@ -1,23 +1,31 @@
 package co.edu.ufps.habilitacion.entidades;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 /**
  * The persistent class for the reporte database table.
  * 
  */
-@Entity(name="reporte")
-@NamedQueries({@NamedQuery(name="Reporte.findAll", query="SELECT r FROM reporte r")})
+@Entity(name = "reporte")
+@NamedQueries({ @NamedQuery(name = "Reporte.findAll", query = "SELECT r FROM reporte r") })
 
 public class Reporte implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	private Timestamp datecreate;
@@ -30,13 +38,13 @@ public class Reporte implements Serializable {
 
 	private String state;
 
-	//bi-directional many-to-one association to Connectiontoken
+	// bi-directional many-to-one association to Connectiontoken
 	@ManyToOne
-	@JoinColumn(name="conexion")
+	@JoinColumn(name = "conexion")
 	private Connectiontoken connectiontoken;
 
-	//bi-directional many-to-one association to Seguimiento
-	@OneToMany(mappedBy="reporte")
+	// bi-directional many-to-one association to Seguimiento
+	@OneToMany(mappedBy = "reporte")
 	private List<Seguimiento> seguimientos;
 
 	public Reporte() {

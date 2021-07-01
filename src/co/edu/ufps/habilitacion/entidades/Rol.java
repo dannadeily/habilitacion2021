@@ -1,29 +1,34 @@
 package co.edu.ufps.habilitacion.entidades;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 /**
  * The persistent class for the rol database table.
  * 
  */
 @Entity
-@NamedQuery(name="Rol.findAll", query="SELECT r FROM Rol r")
+@NamedQuery(name = "Rol.findAll", query = "SELECT r FROM Rol r")
 public class Rol implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	private String descripcion;
 
 	private String description;
 
-	//bi-directional many-to-one association to Usuario
-	@OneToMany(mappedBy="rolBean")
+	// bi-directional many-to-one association to Usuario
+	@OneToMany(mappedBy = "rolBean")
 	private List<Usuario> usuarios;
 
 	public Rol() {

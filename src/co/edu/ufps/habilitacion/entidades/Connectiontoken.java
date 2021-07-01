@@ -1,21 +1,28 @@
 package co.edu.ufps.habilitacion.entidades;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 /**
  * The persistent class for the connectiontoken database table.
  * 
  */
 @Entity
-@NamedQuery(name="Connectiontoken.findAll", query="SELECT c FROM Connectiontoken c")
+@NamedQuery(name = "Connectiontoken.findAll", query = "SELECT c FROM Connectiontoken c")
 public class Connectiontoken implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	private String db;
@@ -32,18 +39,18 @@ public class Connectiontoken implements Serializable {
 
 	private String userdb;
 
-	//bi-directional many-to-one association to Typedb
+	// bi-directional many-to-one association to Typedb
 	@ManyToOne
-	@JoinColumn(name="type")
+	@JoinColumn(name = "type")
 	private Typedb typedb;
 
-	//bi-directional many-to-one association to Usuario
+	// bi-directional many-to-one association to Usuario
 	@ManyToOne
-	@JoinColumn(name="user")
+	@JoinColumn(name = "user")
 	private Usuario usuario;
 
-	//bi-directional many-to-one association to Reporte
-	@OneToMany(mappedBy="connectiontoken")
+	// bi-directional many-to-one association to Reporte
+	@OneToMany(mappedBy = "connectiontoken")
 	private List<Reporte> reportes;
 
 	public Connectiontoken() {

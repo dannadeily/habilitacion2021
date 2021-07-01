@@ -1,21 +1,30 @@
 package co.edu.ufps.habilitacion.entidades;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 /**
  * The persistent class for the usuario database table.
  * 
  */
 @Entity
-@NamedQueries({@NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u"),@NamedQuery(name="Usuario.findByUser", query="SELECT u FROM Usuario u where u.usuario=:usuario")})
+@NamedQueries({ @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u"),
+		@NamedQuery(name = "Usuario.findByUser", query = "SELECT u FROM Usuario u where u.usuario=:user") })
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String usuario;
 
 	private String email;
@@ -26,13 +35,13 @@ public class Usuario implements Serializable {
 
 	private short state;
 
-	//bi-directional many-to-one association to Connectiontoken
-	@OneToMany(mappedBy="usuario")
+	// bi-directional many-to-one association to Connectiontoken
+	@OneToMany(mappedBy = "usuario")
 	private List<Connectiontoken> connectiontokens;
 
-	//bi-directional many-to-one association to Rol
+	// bi-directional many-to-one association to Rol
 	@ManyToOne
-	@JoinColumn(name="role")
+	@JoinColumn(name = "role")
 	private Rol rolBean;
 
 	public Usuario() {
@@ -116,6 +125,5 @@ public class Usuario implements Serializable {
 	public void setRolBean(Rol rolBean) {
 		this.rolBean = rolBean;
 	}
-
 
 }

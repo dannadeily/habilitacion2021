@@ -1,21 +1,27 @@
 package co.edu.ufps.habilitacion.entidades;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.sql.Timestamp;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 
 /**
  * The persistent class for the seguimiento database table.
  * 
  */
 @Entity
-@NamedQuery(name="Seguimiento.findAll", query="SELECT s FROM Seguimiento s")
+@NamedQuery(name = "Seguimiento.findAll", query = "SELECT s FROM Seguimiento s")
 public class Seguimiento implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	private Timestamp dategenerate;
@@ -30,9 +36,9 @@ public class Seguimiento implements Serializable {
 
 	private String type;
 
-	//bi-directional many-to-one association to Reporte
+	// bi-directional many-to-one association to Reporte
 	@ManyToOne
-	@JoinColumn(name="report")
+	@JoinColumn(name = "report")
 	private Reporte reporte;
 
 	public Seguimiento() {

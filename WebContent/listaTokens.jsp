@@ -11,10 +11,10 @@
 <title>Lista de Solicitudes</title>
 <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no'
 	name='viewport' />
-<link rel="icon" href="../../assets/img/icon.ico" type="image/x-icon" />
+<link rel="icon" href="<%=request.getContextPath()%>/assets/img/icon.ico" type="image/x-icon" />
 
 <!-- Fonts and icons -->
-<script src="../../assets/js/plugin/webfont/webfont.min.js"></script>
+<script src="<%=request.getContextPath()%>/assets/js/plugin/webfont/webfont.min.js"></script>
 <script>
 		WebFont.load({
 			google: {
@@ -50,7 +50,7 @@
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="blue">
 				<a href="index.html" class="logo"> <img
-					src="../../assets/img/logo.svg" alt="navbar brand"
+					src="<%=request.getContextPath()%>/assets/img/logo.svg" alt="navbar brand"
 					class="navbar-brand">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button"
@@ -79,7 +79,7 @@
 							class="dropdown-toggle profile-pic" data-toggle="dropdown"
 							href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="../../assets/img/profile.jpg" alt="..."
+									<img src="<%=request.getContextPath()%>/assets/img/profile.jpg" alt="..."
 										class="avatar-img rounded-circle">
 								</div>
 						</a>
@@ -88,7 +88,7 @@
 									<li>
 										<div class="user-box">
 											<div class="avatar-lg">
-												<img src="../../assets/img/profile.jpg" alt="image profile"
+												<img src="<%=request.getContextPath()%>/assets/img/profile.jpg" alt="image profile"
 													class="avatar-img rounded">
 											</div>
 											<div class="u-text">
@@ -115,7 +115,7 @@
 				<div class="sidebar-content">
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
-							<img src="../../assets/img/profile.jpg" alt="..."
+							<img src="<%=request.getContextPath()%>/assets/img/profile.jpg" alt="..."
 								class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
@@ -233,43 +233,43 @@
 		</div>
 	</div>
 	<!--   Core JS Files   -->
-	<script src="../../assets/js/core/jquery.3.2.1.min.js"></script>
-	<script src="../../assets/js/core/popper.min.js"></script>
-	<script src="../../assets/js/core/bootstrap.min.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/core/jquery.3.2.1.min.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/core/popper.min.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/core/bootstrap.min.js"></script>
 
 	<!-- jQuery UI -->
 	<script
-		src="../../assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+		src="<%=request.getContextPath()%>/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 	<script
-		src="../../assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+		src="<%=request.getContextPath()%>/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
 
 	<!-- jQuery Scrollbar -->
 	<script
-		src="../../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+		src="<%=request.getContextPath()%>/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
 
 	<!-- jQuery Sparkline -->
 	<script
-		src="../../assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+		src="<%=request.getContextPath()%>/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
 
 	<!-- Chart Circle -->
-	<script src="../../assets/js/plugin/chart-circle/circles.min.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/plugin/chart-circle/circles.min.js"></script>
 
 	<!-- Datatables -->
-	<script src="../../assets/js/plugin/datatables/datatables.min.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/plugin/datatables/datatables.min.js"></script>
 
 	<!-- jQuery Vector Maps -->
-	<script src="../../assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
-	<script src="../../assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js"></script>
 
 	<!-- Sweet Alert -->
-	<script src="../../assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 
 	<!-- Atlantis JS -->
-	<script src="../../assets/js/atlantis.min.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/atlantis.min.js"></script>
 
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
-	<script src="../../assets/js/setting-demo.js"></script>
-	<script src="../../assets/js/demo.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/setting-demo.js"></script>
+	<script src="<%=request.getContextPath()%>/assets/js/demo.js"></script>
 
 </body>
 

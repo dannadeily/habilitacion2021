@@ -5,11 +5,10 @@ import java.util.List;
 
 import javax.persistence.Query;
 
-import co.edu.ufps.habilitacion.entidades.*;
-import co.edu.ufps.habilitacion.util.*;
+import co.edu.ufps.habilitacion.entidades.Connectiontoken;
+import co.edu.ufps.habilitacion.util.Conexion;
 
-
-public class ConnectiontokenDAO extends Conexion<Connectiontoken> implements GenericDAO<Connectiontoken>{
+public class ConnectiontokenDAO extends Conexion<Connectiontoken> implements GenericDAO<Connectiontoken> {
 	public ConnectiontokenDAO() {
 		super(Connectiontoken.class);
 	}
@@ -19,7 +18,7 @@ public class ConnectiontokenDAO extends Conexion<Connectiontoken> implements Gen
 				"select c.id, u.id as usuario from usuario u inner join connectiontoken c on c.user=u.id inner join reporte on reporte.conexion=c.id where u.id=:usuario")
 				.setParameter("usuario", usuario);
 		List<Object[]> lista = consulta.getResultList();
-		List<Connectiontoken> listtokens =null;
+		List<Connectiontoken> listtokens = null;
 		if (lista != null) {
 			listtokens = new ArrayList<>();
 			for (Object[] s : lista) {
