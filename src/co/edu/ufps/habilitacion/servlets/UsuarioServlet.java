@@ -53,20 +53,20 @@ public class UsuarioServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String path = request.getServletPath();
-		
+
 		Integer reporte = 0;
-		
+
 		if(path.contains("/user")) {
 			path = path.replace("/user", "");
 			switchUsuario(request, response, path);
 		}else if(path.contains("/admin")) {
-			
+
 		}
 	}
-	
+
 	protected void switchUsuario(HttpServletRequest request, HttpServletResponse response, String path)
 			throws ServletException, IOException {
-		
+
 		int reporte = 0;
 		switch (path) {
 		case "/registro":
@@ -116,8 +116,8 @@ public class UsuarioServlet extends HttpServlet {
 			Usuario us = new Usuario(usuario, email, pass, (short) 0, rDAO.find(Integer.parseInt(rol)));
 			uDAO.insert(us);
 			Mail mail = new Mail();
-			String url = "http://localhost:8080/SistemaReporte/user/activar?usuario=" + us.getUsuario();
-			mail.enviarEmail(us.getEmail(), "Activación", url);
+			String url = "http://localhost:8080/habilitacion2021/user/activar?usuario=" + us.getUsuario();
+			mail.enviarEmail(us.getEmail(), "Activaciï¿½n", url);
 		} else {
 			System.out.println("Error");
 		}
