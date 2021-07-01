@@ -1,75 +1,65 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>SRC Software</title>
-    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="assets/img/icon.ico" type="image/x-icon" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/singin.css">
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/checkradio.css">
-    <link rel="stylesheet" href="assets/css/microcurriculo.css">
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link rel="stylesheet" href="assets/css/demo.css">
-    <!-- CSS Custom -->
-    <link rel="stylesheet" href="assets/css/microcurriculo.css">
+<meta charset="ISO-8859-1">
+<meta charset="utf-8">
+<title>Nuestra tienda virtual</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
-
 <body>
-    <div class="row cuerpologin">
-        <div class="logoUFPS col d-flex justify-content-center align-items-center">
-            <img class="w-50" src="assets/img/Logo-nuevo-vertical.png" alt="logo de la UFPS">
-        </div>
-        <div class="col d-flex justify-content-center align-items-center ">
-            <div class="  w-50 h-50">
-               <form action="${pageContext.request.contextPath}/TiendaServlet?action=login" method="post">
-                    <div class=" fbr plogin prlogin gbcolor">
-                        <div class="mb-3 w-100 d-flex justify-content-center">
-                            <img class="w-50" src="assets/img/profile.svg" alt="">
-                        </div>
-                        <div class="mb-3 form-label-group">
-                            <input type="text" id="inputEmail" class="form-control" placeholder="Usuario"
-                                name="email" required autofocus>
-                        </div>
-                        <div class="mb-3 form-label-group">
-                            <input type="password" id="inputPassword" class="form-control" placeholder="Password"
-                                name="pass" required>
-                        </div>
-                        <%
-                        if (request.getAttribute("mensajeError") != null) {
-                    %>
-                        <p>
-                            ( ""+<%=request.getAttribute("mensajeError")%>)
-                        </p>
-                        <%
-                        }
-                    %>
-                        <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
-                            type="submit">Ingresar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!--   Core JS Files   -->
-    <script src="assets/js/core/jquery.3.2.1.min.js"></script>
-    <script src="assets/js/core/popper.min.js"></script>
-    <script src="assets/js/core/bootstrap.min.js"></script>
-    <!-- jQuery UI -->
-    <script src="assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-    <script src="assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
-    <!-- jQuery Scrollbar -->
-    <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-    <!-- Atlantis JS -->
-    <script src="assets/js/atlantis.min.js"></script>
-    <!-- Atlantis DEMO methods, don't include it in your project! -->
-    <script src="assets/js/setting-demo2.js"></script>
-</body>
+	<div class="container-fluid">
+		<div class="row no-gutter">
+			<div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+			<div class="col-md-8 col-lg-6">
+				<div class="login d-flex align-items-center py-5">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-9 col-lg-8 mx-auto text-center">
+								<h3 class="login-heading mb-4">JasperReports</h3>
+								<form
+									action="${pageContext.request.contextPath}/Login/enviar"
+									method="post">
 
+									<div class="form-label-group">
+										<input type="text" id="inputEmail" class="form-control"
+											placeholder="Email address" name="usuario" required autofocus>
+										<label for="inputEmail">Usuario</label>
+									</div>
+
+									<div class="form-label-group">
+										<input type="password" id="inputPassword" class="form-control"
+											placeholder="Password" name="pass" required> <label
+											for="inputPassword">Password</label>
+									</div>
+									<button
+										class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+										type="submit">Ingresar</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
+</body>
 </html>
